@@ -169,35 +169,16 @@ async def unban(ctx, user: discord.User):
 # theese are funny (Super funny) commands
 @bot.command(pass_context  = True)
 async def dbd(ctx):
-    vruh2 = await bot.fetch_user(146956554371989504)
-    fj = await bot.fetch_user(578714642843435019)
-    lp = await bot.fetch_user(539137498664665109)
-    b = await bot.fetch_user(441986625283686413)
-    Channel_b = await b.create_dm()
-    Channel_v = await vruh2.create_dm()
-    Channel_f = await fj.create_dm()
-    Channel_l = await lp.create_dm()
 
-    try:
-        await Channel_b.send("Alguem usou este comando pois quer jogar dbd contigo")
-        print("b check")
-    except:
-        print("b fail")
-    try:
-        await Channel_f.send("Alguem usou este comando pois quer jogar dbd contigo")
-        print("f check")
-    except:
-        print("f fail")
-    try:
-        await Channel_v.send("Alguem usou este comando pois quer jogar dbd contigo")
-        print("v check")
-    except:
-        print("v fail")
-    try:    
-        await Channel_l.send("Alguem usou este comando pois quer jogar dbd contigo")
-        print("l check")
-    except:
-        print("l fail")
+    ts = [146956554371989504, 441986625283686413, 539137498664665109, 578714642843435019]
+
+    for t in ts:
+        user = await bot.fetch_user(t)
+
+        channel = await user.create_dm()
+
+        await channel.send("Alguem usou este comando pois quer jogar dbd contigo")
+
     await ctx.message.channel.send("Baiano Vruh 2 Fellow jitster e Lemon convidados para o dbd (Pallet loop)")
 
 @bot.command(pass_context = True)
