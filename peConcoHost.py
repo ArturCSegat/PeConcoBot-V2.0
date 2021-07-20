@@ -110,7 +110,12 @@ async def clear(ctx, number: int):
 # this section is for user managing commands
 @bot.command(pass_context = True)
 async def kick(ctx, user: discord.Member, is_in_code = 0):
+
     commander = ctx.message.author
+
+    if user == "@everyone" and commander.id == ctx.guild.owner_id:
+        for m in ctx.guild.members:
+            await m.kick(reason=None)
 
     r_dict = top.role_lvl
 
