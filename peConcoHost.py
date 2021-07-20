@@ -140,13 +140,13 @@ async def ban(ctx, user: discord.Member):
 
     r_dict = top.role_lvl
 
-     valid_t = top.chekRole(commander.id, user.id)
+    valid_t = top.chekRole(commander.id, user.id)
 
-     if valid_t:
+    if valid_t:
         await ctx.send(f"{user.mention} foi banido")
         await user.ban()
     else:
-            await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
+        await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
 
 
 
