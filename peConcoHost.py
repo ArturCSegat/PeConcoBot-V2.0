@@ -122,7 +122,7 @@ async def kick(ctx, user: discord.Member, is_in_code = 0):
     r_dict = top.role_lvl
 
     
-    valid_t = top.chekRole(commander.id, user.id)
+    valid_t = top.checkRole(commander.id, user.id)
 
 
     if valid_t:
@@ -140,7 +140,7 @@ async def ban(ctx, user: discord.Member):
 
     r_dict = top.role_lvl
 
-    valid_t = top.chekRole(commander.id, user.id)
+    valid_t = top.checkRole(commander.id, user.id)
 
     if valid_t:
         await ctx.send(f"{user.mention} foi banido")
@@ -157,7 +157,7 @@ async def superultramegaban(ctx, user :discord.Member):
     #simple test
     r_dict = top.role_lvl
 
-    valid_t = top.chekRole(commander.id, user.id)
+    valid_t = top.checkRole(commander.id, user.id)
 
     if valid_t:
         await user.ban()
