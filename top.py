@@ -25,6 +25,7 @@ role_lvl = [CM, CV, chads, pimonte, HM, Redklauss, Indio, chad, ST, FT, BOT, atl
 def checkRole(id1, id2):
     valid = false
     if role_lvl.index(id1) < role_lvl.index(id2):
-        return valid=True
+        valid = True
+        return valid
     else:
         return valid
