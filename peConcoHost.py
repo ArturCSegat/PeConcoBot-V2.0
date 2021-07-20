@@ -122,15 +122,19 @@ async def kick(ctx, user: discord.Member, is_in_code = 0):
     r_dict = top.role_lvl
 
     
-    valid_t = top.checkRole(commander.id, user.id)
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
 
     if valid_t:
+
+        await ctx.send(f"{user.mention} foi kickado")
+        await user.kick()
         u = await bot.fetch_user(user.id)
 
         invite_channel = await u.create_dm()
 
         await invite_channel.send("discord.gg/epk8bFT")
+
     else:
         await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
 
@@ -140,7 +144,7 @@ async def ban(ctx, user: discord.Member):
 
     r_dict = top.role_lvl
 
-    valid_t = top.checkRole(commander.id, user.id)
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
         await ctx.send(f"{user.mention} foi banido")
@@ -157,7 +161,7 @@ async def superultramegaban(ctx, user :discord.Member):
     #simple test
     r_dict = top.role_lvl
 
-    valid_t = top.checkRole(commander.id, user.id)
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
         await user.ban()

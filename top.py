@@ -19,11 +19,11 @@ pleb = 818486529314783263
 baiano = 862067103061377034
 MG = 847287306858528828
 
-role_lvl = [CM, CV, chads, pimonte, HM, Redklauss, Indio, chad, ST, FT, BOT, atlantida, pleb, baiano, MG]
+role_lvl = [baiano,CM, CV, chads, pimonte, HM, Redklauss, Indio, chad, ST, FT, BOT, atlantida, pleb,MG]
 
 
 def checkRole(id1, id2):
-    valid = false
+    valid = False  
     if role_lvl.index(id1) < role_lvl.index(id2):
         valid = True
         return valid
