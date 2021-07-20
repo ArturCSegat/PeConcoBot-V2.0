@@ -1,4 +1,4 @@
-from operator import truediv
+
 import discord
 from discord import client
 from discord import message
@@ -38,28 +38,34 @@ async def on_member_join(member: discord.Member):
     grand_rob = guild.get_role(854518898220990466)
     s_tereza = guild.get_role(859066768601645066)
     f_tereza = guild.get_role(856282555703492638)
-    omega = guild.get_role(862704974429159455)
+    chadPreto = guild.get_role(856056567491985419)
     indio = guild.get_role(862672037835178004)
     redk = guild.get_role(860139656796700682)
     pimonte = guild.get_role(862067103061377034)
     f = guild.get_role(862333483732566066)
+    cv = guild.get_role(top.CV)
     
 
 # members
     vruh2 = membro_OOP.Membruh("kfh", 146956554371989504, c_master)
-    omni = membro_OOP.Membruh("omni", 225051659221467137, omega)
+    omni = membro_OOP.Membruh("omni", 225051659221467137, chadPreto)
     chad = membro_OOP.Membruh("faxina", 584776317321609238, chadCargo)
     ernestoChe = membro_OOP.Membruh("ernesto", 691069156400824372, indio)
     baiano = membro_OOP.Membruh("breno", 441986625283686413, baiano_cargo)
     tocomdor = membro_OOP.Membruh("dudz", 358985083329314816, redk)
     pontos = membro_OOP.Membruh("...", 578714642843435019, macho_g)
     drealocks = membro_OOP.Membruh("Drealocks", 354303193372557313, pimonte)
-    epiclord = membro_OOP.Membruh("Epic", 423503073479098368, omega)
+    epiclord = membro_OOP.Membruh("Epic", 423503073479098368, chadPreto)
     MC_lendrinho = membro_OOP.Membruh("loldrinho", 423596836578918444, f)
+    miguel = membro_OOP.Membruh("mjairmingho", 854510245987483668.pleb)
+    gi = membro_OOP.Membruh("gi", 673769040979689472, cv)
+    julia_cv = membro_OOP.Membruh("julia_cv", 762057443102425109, cv)
+    jofi = membro_OOP.Membruh("JOFI", 323910014190223363, cv)
+    isona = membro_OOP.Membruh("Isona", 368897414188236800, cv)
 
 
 
-    members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, MC_lendrinho]
+    members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, MC_lendrinho, miguel, gi, julia_cv, jofi, isona]
 
     members_hash = {m.ident: m for m in members}
 
@@ -115,10 +121,11 @@ async def kick(ctx, user: discord.Member, is_in_code = 0):
 
     r_dict = top.role_lvl
 
-    if r_dict[commander.top_role.id] > r_dict[user.top_role.id]:
-        
-        await user.kick()
-        await ctx.send(f"{user.mention} foi kickado")
+    
+    valid_t = top.chekRole(commander.id, user.id)
+
+
+    if valid_t:
         u = await bot.fetch_user(user.id)
 
         invite_channel = await u.create_dm()
@@ -133,7 +140,9 @@ async def ban(ctx, user: discord.Member):
 
     r_dict = top.role_lvl
 
-    if r_dict[commander.top_role.id] > r_dict[user.top_role.id]:
+     valid_t = top.chekRole(commander.id, user.id)
+
+     if valid_t:
         await ctx.send(f"{user.mention} foi banido")
         await user.ban()
     else:
@@ -148,7 +157,9 @@ async def superultramegaban(ctx, user :discord.Member):
     #simple test
     r_dict = top.role_lvl
 
-    if r_dict[commander.top_role.id] > r_dict[user.top_role.id]:
+    valid_t = top.chekRole(commander.id, user.id)
+
+    if valid_t:
         await user.ban()
         await ctx.send(f"{user.mention} foi super ultra mega banido")
     else:
@@ -174,6 +185,7 @@ async def kickall(ctx):
         for m in ctx.guild.members:
             if m.bot ==  False and m.id != 441986625283686413:
                     await m.kick(reason=None)
+    await ctx.send("kk te fode")
         
 
 @bot.command(pass_context  = True)
