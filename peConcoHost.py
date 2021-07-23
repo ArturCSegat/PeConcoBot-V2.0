@@ -86,22 +86,23 @@ async def on_message(message):
 
 # this section is exclusively for debugging and testing purposes
 
-@bot.command(pass_context =True)
-async def test(ctx, user: discord.User):
-    if user.top_role.name == "Membros":
-        await ctx.send("O seu maior cargo é Membros")
+# obsoleted
+#@bot.command(pass_context =True)
+#async def test(ctx, user: discord.User):
+#    if user.top_role.name == "Membros":
+#        await ctx.send("O seu maior cargo é Membros")
 
 @bot.command(pass_context = True)
-async def test2(ctx, user: discord.User):
+async def test(ctx, user: discord.User):
     await ctx.send(ctx.message.author.top_role)
     await ctx.send(user.top_role)
 
 @bot.command(pass_context =True)
-async def test3(ctx):
+async def test2(ctx):
     await ctx.send("ok")
 
 @bot.command(pass_context =True)
-async def test4(ctx):
+async def test3(ctx):
     await ctx.send("a")
 
 # message managing commands
