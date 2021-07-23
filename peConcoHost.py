@@ -183,13 +183,13 @@ async def unban(ctx, user: discord.User):
     await invite_channel.send("discord.gg/epk8bFT")
 
 # theese are funny (Super funny) commands
-@bot.command()
-async def kickall(ctx):
-    if ctx.message.author.id == 441986625283686413 or 423503073479098368:
-        for m in ctx.guild.members:
-            if m.bot ==  False and m.id != 441986625283686413 and 423503073479098368:
-                    await m.kick(reason=None)
-    await ctx.send("kk te fode")
+# @bot.command()
+# async def kickall(ctx):
+#     if ctx.message.author.id == 441986625283686413:
+#         for m in ctx.guild.members:
+#             if m.bot ==  False and m.id != 441986625283686413:
+#                     await m.kick(reason=None)
+#     await ctx.send("kk te fode")
         
 
 @bot.command(pass_context  = True)
