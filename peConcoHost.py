@@ -68,10 +68,10 @@ async def on_member_join(member: discord.Member):
     members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, MC_lendrinho, miguel, gi, julia_cv, jofi, isona]
 
     members_hash = {m.ident: m for m in members}
-
+# handles giving out the roles
     if member.id in members_hash:
         await member.add_roles(members_hash[member.id].cargo, reason=None, atomic=True)
-
+# if the user isn't on the list above this section
     else:
         await member.add_roles(pleb, reason=None, atomic=True)
     
@@ -84,24 +84,25 @@ async def on_message(message):
 
 #only commands from here
 
-# this section is exclusivly for debugging and testing purposes
+# this section is exclusively for debugging and testing purposes
 
-@bot.command(pass_context =True)
-async def test(ctx, user: discord.User):
-    if user.top_role.name == "Plebeus":
-        await ctx.send("ok")
+# obsoleted
+#@bot.command(pass_context =True)
+#async def test(ctx, user: discord.User):
+#    if user.top_role.name == "Membros":
+#        await ctx.send("O seu maior cargo é Membros")
 
 @bot.command(pass_context = True)
-async def test2(ctx, user: discord.User):
+async def test(ctx, user: discord.User):
     await ctx.send(ctx.message.author.top_role)
     await ctx.send(user.top_role)
 
 @bot.command(pass_context =True)
-async def test3(ctx):
+async def test2(ctx):
     await ctx.send("ok")
 
 @bot.command(pass_context =True)
-async def test4(ctx):
+async def test3(ctx):
     await ctx.send("a")
 
 # message managing commands
