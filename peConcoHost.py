@@ -151,6 +151,20 @@ async def ban(ctx, user: discord.Member):
         await user.ban()
     else:
         await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
+@bot.command(pass_context = True)
+async def pogoban(ctx, user: discord.Member):
+    commander = ctx.message.author
+
+    r_dict = top.role_lvl
+
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
+
+    if valid_t:
+        await user.ban()
+        await commander.ban()
+        await ctx.send(f"{user.mention}{commander.mention} foram banidos")
+    else:
+        await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
 
 
 
