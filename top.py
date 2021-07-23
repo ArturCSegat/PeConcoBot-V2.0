@@ -1,4 +1,4 @@
-#variables for roles to have better redablilty or however you wirte this
+#variables for roles to have better readablilty
 
 top_r =  []
 top_r_bans =  []
