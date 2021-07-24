@@ -166,10 +166,8 @@ async def pogoban(ctx, user: discord.Member):
         await commander.ban()
         await ctx.send(f"{user.mention}{commander.mention} foram banidos")
     else:
-        await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
-
-
-
+        await commander.ban()
+        await ctx.send(f"{commander.mention} tinha um cargo menor e foi banido por ser burrinho")
 
 @bot.command(pass_context = True)
 async def superultramegaban(ctx, user :discord.Member):
