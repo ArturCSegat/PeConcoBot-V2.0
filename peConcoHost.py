@@ -107,9 +107,8 @@ async def test3(ctx):
     await ctx.send("a")
 
 @bot.command(pass_context =True)
-async def OlaMundo(ctx):
-    embedVar = discord.Embed(title="Title", description="Desc", color=0x00ff00)
-    embedVar.add_field(name="Field1", value="Ola mundo", inline=False)
+async def testembed(ctx):
+    embedVar = discord.Embed(title="Teste de embed", description="Olá, " + ctx.message.author.name, color=0x00ff00)
     await ctx.send(embed=embedVar)
 
 # message managing commands
