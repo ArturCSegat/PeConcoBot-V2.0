@@ -220,6 +220,8 @@ async def dbd(ctx):
     await ctx.message.channel.send("Baiano Fellow jitster e Lemon convidados para o dbd (Pallet loop)")
 
 @bot.command(pass_context = True)
+
+@bot.command(pass_context = True)
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""):
     members_t = [m1, m2, m3, m4, m5, m6]
     members = []
@@ -233,12 +235,10 @@ async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: 
         if m.id not in participants:
             participants.append(m.id)
 
-    embedVar = discord.Embed(title="Roleta Russa", description=participants + "test", set_image = "https://cdn.discordapp.com/attachments/732780811920605247/868407430105661500/dc983c4d100ad1fc9efec48fad5127cd.png")
-    response = await ctx.send(embed = embedVar)
-    
+    response = await ctx.send("Reaja para confirmar")
     await response.add_reaction("👍")
 
-    time.sleep(10)
+    time.sleep(15)
 
     print(participants)
 
@@ -273,7 +273,6 @@ async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: 
         print(f"counter = {count - 1 }")
         print(f"len = {len(participants)}")
         await ctx.send("Nem todos os participantes concordaram ou voce n esta participando da roleta")
-
 
 
 @bot.command(pass_context = True)
