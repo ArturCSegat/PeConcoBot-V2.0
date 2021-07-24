@@ -318,7 +318,7 @@ async def join(ctx):
 @bot.command(pass_context = True)
 async def suicidio(ctx):
     commander = ctx.message.author
-    await commander.ban()
+    await commander.kick()
     embedVar = discord.Embed(title="Morte", description=f"{commander.mention} se matou")
     await ctx.send(embed=embedVar)
     invite_channel = await u.create_dm()
