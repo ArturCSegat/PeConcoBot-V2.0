@@ -85,14 +85,9 @@ async def on_message(message):
 
 #only commands from here
 
-# this section is exclusively for debugging and testing purposes
 
-# obsoleted
-#@bot.command(pass_context =True)
-#async def test(ctx, user: discord.User):
-#    if user.top_role.name == "Membros":
-#        await ctx.send("O seu maior cargo é Membros")
 
+# Debug commands
 @bot.command(pass_context = True)
 async def test(ctx, user: discord.User):
     await ctx.send(ctx.message.author.top_role)
@@ -111,84 +106,69 @@ async def testembed(ctx):
     embedVar = discord.Embed(title="Teste de embed", description="Olá, " + ctx.message.author.mention, color=0x00ff00)
     await ctx.send(embed=embedVar)
 
-# message managing commands
+
+
+# Message-related commands
 @bot.command(pass_context = True)
 async def clear(ctx, number: int):
-    if number < 51:
+    if number <= 50:
         await ctx.message.channel.purge(limit=number + 1)
         await ctx.send(f"{number} mensagens deletadas por {ctx.message.author.name}" )
         print("clear command used")
+    else:
+        await ctx.send("Por favor nao")
 
 
-# this section is for user managing commands
+
+# Moderation commands
+# Rewritten with embed support -- kfh
+
 @bot.command(pass_context = True)
 async def kick(ctx, user: discord.Member, is_in_code = 0):
-
-    commander = ctx.message.author
-
-    r_dict = top.role_lvl
-
-    
-    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
-
-
-    if valid_t:
-
-        await ctx.send(f"{user.mention} foi kickado")
-        await user.kick()
-        u = await bot.fetch_user(user.id)
-
-        invite_channel = await u.create_dm()
-
-        await invite_channel.send("discord.gg/epk8bFT")
-
-    else:
-        await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
-
-@bot.command(pass_context = True)
-async def kicktest(ctx, user: discord.Member, is_in_code = 0):
     commander = ctx.message.author
     r_dict = top.role_lvl
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
-        embedVar = discord.Embed(title="Teste de embed", description=f"{user.mention} foi kickado", color=0xded707)
+        embedVar = discord.Embed(title="Membro Kickado", description=f"{user.mention} foi kickado", color=0xded707)
         await ctx.send(embed=embedVar)
         await user.kick()
         u = await bot.fetch_user(user.id)
         invite_channel = await u.create_dm()
-        await invite_channel.send("discord.gg/epk8bFT")
+        await invite_channel.send("Entra de novo ai putelho, https://discord.gg/epk8bFT")
     else:
-        await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
+        embedVar = discord.Embed(description="Este usuario tem um cargo melhor que o seu ou o seu cargo não existe", color=0x3289a8)
+        await ctx.send(embed=embedVar)
 
 @bot.command(pass_context = True)
 async def ban(ctx, user: discord.Member):
     commander = ctx.message.author
-
     r_dict = top.role_lvl
-
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
-        await ctx.send(f"{user.mention} foi banido")
+        embedVar = discord.Embed(title="Membro Banido", description=f"{user.mention} foi banido", color=0xa83232)
+        await ctx.send(embed=embedVar)
         await user.ban()
     else:
-        await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
+        embedVar = discord.Embed(description="Este usuario tem um cargo melhor que o seu ou o seu cargo não existe", color=0x3289a8)
+        await ctx.send(embed=embedVar)
+
 @bot.command(pass_context = True)
 async def pogoban(ctx, user: discord.Member):
     commander = ctx.message.author
-
     r_dict = top.role_lvl
-
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
         await user.ban()
         await commander.ban()
-        await ctx.send(f"{user.mention}{commander.mention} foram banidos")
+        embedVar = discord.Embed(title="Membro suicida!!!", description=f"{commander.mention} ficou sem motivos pra viver, e explodiu {user.mention}", color=0xff9100)
+        await ctx.send(embed=embedVar)
     else:
         await commander.ban()
-        await ctx.send(f"{commander.mention} tinha um cargo menor e foi banido por ser burrinho")
+        embedVar = discord.Embed(title="Burro do caralho", description=f"{commander.mention} tentou se suicidar e levar junto {user.mention}, mas seu QI era de uma porta (ele morreu sozinho kk)", color=0xff00ff)
+        await ctx.send(embed=embedVar)
 
 @bot.command(pass_context = True)
 async def superultramegaban(ctx, user :discord.Member):
@@ -200,9 +180,11 @@ async def superultramegaban(ctx, user :discord.Member):
 
     if valid_t:
         await user.ban()
-        await ctx.send(f"{user.mention} foi super ultra mega banido")
+        embedVar = discord.Embed(title="Kapow", description=f"{commander.mention} super ultra mega baniu {user.mention} (ultra morte)", color=0xff9100)
+        await ctx.send(embed=embedVar)
     else:
-            await ctx.send("Este usuario tem um cargo melhor que o seu ou o seu cargo não existe")
+        embedVar = discord.Embed(description="Este usuario tem um cargo melhor que o seu ou o seu cargo não existe", color=0x3289a8)
+        await ctx.send(embed=embedVar)
 
 @bot.command(pass_context = True)
 async def unban(ctx, user: discord.User):
@@ -210,18 +192,16 @@ async def unban(ctx, user: discord.User):
     u = await bot.fetch_user(uid)
     
     await ctx.guild.unban(u)
-
-    await ctx.send(f"{user.mention}foi desbanido")
-
+    embedVar = discord.Embed(title="Membro desbanido", description=f"{user.mention} foi desbanido e você só pode esperar que o mesmo n seja um puto", color=0x11ff00)
+    await ctx.send(embed=embedVar)
     invite_channel = await u.create_dm()
-
-    await invite_channel.send("discord.gg/epk8bFT")
+    await invite_channel.send("Vc foi desbanido, https://discord.gg/epk8bFT")
 
 # theese are funny (Super funny) commands
 @bot.command()
 async def kickall(ctx):
     if ctx.message.author.id == 441986625283686413:
-        await ctx.send("Baiano q falta de consideração sua")
+        await ctx.send(ctx.message.author.mention + ", q falta de consideração sua")
     else:
         await ctx.send("Kk te fode")
  
