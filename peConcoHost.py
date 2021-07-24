@@ -19,6 +19,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready():
     print("ready")
+    await ctx.send("Ready for love")
 
 @bot.event
 async def on_member_join(member: discord.Member):
@@ -136,6 +137,9 @@ async def kick(ctx, user: discord.Member, is_in_code = 0):
         u = await bot.fetch_user(user.id)
         invite_channel = await u.create_dm()
         await invite_channel.send("Entra de novo ai putelho, https://discord.gg/epk8bFT")
+        if ctx.message.author.id == 441986625283686413:
+            if user.id == 146956554371989504:
+                await ctx.send("Fake")
     else:
         embedVar = discord.Embed(description="Este usuario tem um cargo melhor que o seu ou o seu cargo não existe", color=0x3289a8)
         await ctx.send(embed=embedVar)
@@ -192,7 +196,7 @@ async def unban(ctx, user: discord.User):
     u = await bot.fetch_user(uid)
     
     await ctx.guild.unban(u)
-    embedVar = discord.Embed(title="Membro desbanido", description=f"{user.mention} foi desbanido e você só pode esperar que o mesmo n seja um puto", color=0x11ff00)
+    embedVar = discord.Embed(title="Membro desbanido", description=f"{user.mention} foi desbanido", color=0x11ff00)
     await ctx.send(embed=embedVar)
     invite_channel = await u.create_dm()
     await invite_channel.send("Vc foi desbanido, https://discord.gg/epk8bFT")
