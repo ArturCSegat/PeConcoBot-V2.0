@@ -130,7 +130,7 @@ async def kick(ctx, user: discord.Member, is_in_code = 0):
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
     if ctx.message.author.id == 323479282980487169 and user.id == 146956554371989504:
            await ctx.send("Fake")
-    if valid_t:
+    elif valid_t:
         embedVar = discord.Embed(title="Membro Kickado", description=f"{user.mention} foi kickado", color=0xded707)
         await ctx.send(embed=embedVar)
         await user.kick()
