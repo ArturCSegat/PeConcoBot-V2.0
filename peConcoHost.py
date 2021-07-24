@@ -220,8 +220,6 @@ async def dbd(ctx):
     await ctx.message.channel.send("Baiano Fellow jitster e Lemon convidados para o dbd (Pallet loop)")
 
 @bot.command(pass_context = True)
-
-@bot.command(pass_context = True)
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""):
     members_t = [m1, m2, m3, m4, m5, m6]
     members = []
