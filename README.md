@@ -1,5 +1,2 @@
-# PeConcoBot-V2.0
-Discord bot for the "Pé Conco Server" Discord server
-Made by EpicLord#7418, minor contributions by Vruh 2#0961
-# TODO
-More funny commands
+# embed Branch
+The beta branch, everything i don't want in the master branch goes in here, otherwise i get killed
