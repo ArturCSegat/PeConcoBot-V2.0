@@ -112,12 +112,12 @@ async def testembed(ctx):
 @bot.command(pass_context = True)
 async def clear(ctx, number: int):
     if number <= 50:
-        await ctx.message.channel.purge(limit=number + 1)
-        await ctx.send(f"{number} mensagens deletadas por {ctx.message.author.name}" )
+        await ctx.message.channel.purge(limit=number)
+        embedVar = discord.Embed(description=f"{ctx.message.author.mention} deletou {number} mensagens", color=0x000000)
+        await ctx.send(embed=embedVar)     
         print("clear command used")
     else:
         await ctx.send("Por favor nao")
-
 
 
 # Moderation commands
