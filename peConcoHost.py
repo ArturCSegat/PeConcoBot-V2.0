@@ -332,4 +332,4 @@ async def suicidio(ctx):
 async def close(ctx):
      exit()
 
-bot.run("NzczOTMzNDUxMDM5NDczNjcy.X6QbsQ.rBCNpShd8tn8DVlhbdHgBAwEnIU")
+bot.run("ODY4NDE4MTkzNDUzMTEzMzY1.YPvXdw.1RCOW6M-oQ6ajjWPRey32RpeMw4")
