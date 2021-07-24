@@ -106,6 +106,10 @@ async def test2(ctx):
 async def test3(ctx):
     await ctx.send("a")
 
+@bot.command(pass_context =True)
+async def OlaMundo(ctx):
+    await ctx.send("Ola mundo")
+
 # message managing commands
 @bot.command(pass_context = True)
 async def clear(ctx, number: int):
