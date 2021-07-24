@@ -22,10 +22,8 @@ async def on_ready():
 
 @bot.event
 async def on_member_join(member: discord.Member):
-    canal = await bot.get_channel(760586755672899634)
+
     guild = bot.get_guild(581158091115200535)
-    # Como que ele vai mencionar o membro que entrou sendo que ele não foi definido? discord.Member?
-    await canal.send("Teste")
 
 
 # roles
