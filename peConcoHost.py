@@ -108,7 +108,7 @@ async def test3(ctx):
 
 @bot.command(pass_context =True)
 async def testembed(ctx):
-    embedVar = discord.Embed(title="Teste de embed", description="Olá, " + ctx.message.author.name, color=0x00ff00)
+    embedVar = discord.Embed(title="Teste de embed", description="Olá, " + ctx.message.author.mention, color=0x00ff00)
     await ctx.send(embed=embedVar)
 
 # message managing commands
