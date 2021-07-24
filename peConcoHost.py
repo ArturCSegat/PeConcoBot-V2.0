@@ -317,6 +317,15 @@ async def join(ctx):
     channel = ctx.author.voice.channel
     await channel.connect()
 
+@bot.command(pass_context = True)
+async def suicidio(ctx):
+    commander = ctx.message.author
+    await commander.ban()
+    embedVar = discord.Embed(title="Morte", description=f"{commander.mention} se matou")
+    await ctx.send(embed=embedVar)
+    invite_channel = await u.create_dm()
+    await invite_channel.send("Emo da porra, https://discord.gg/epk8bFT")
+
 # mergency command
 
 @bot.command(pass_context = True)
