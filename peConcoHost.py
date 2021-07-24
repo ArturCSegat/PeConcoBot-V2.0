@@ -234,7 +234,7 @@ async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: 
             participants.append(m.id)
 
     embed=discord.Embed(title="Roleta Russa", description=participants + "test", set_image = "https://cdn.discordapp.com/attachments/732780811920605247/868407430105661500/dc983c4d100ad1fc9efec48fad5127cd.png")
-    response = await ctx.send(embed=embed)
+    response = await ctx.send("Teste")
     await response.add_reaction("👍")
 
     time.sleep(10)
