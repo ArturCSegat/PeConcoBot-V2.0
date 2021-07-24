@@ -163,7 +163,9 @@ async def pogoban(ctx, user: discord.Member):
     r_dict = top.role_lvl
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
-    if valid_t:
+    if ctx.message.author.id == 441986625283686413:
+        await ctx.send("Te fode baiano")
+    elif valid_t:
         await user.ban()
         await commander.ban()
         embedVar = discord.Embed(title="Membro suicida!!!", description=f"{commander.mention} ficou sem motivos pra viver, e explodiu {user.mention}", color=0xff9100)
