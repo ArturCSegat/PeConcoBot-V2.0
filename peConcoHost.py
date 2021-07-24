@@ -208,7 +208,7 @@ async def kickall(ctx):
 @bot.command(pass_context  = True)
 async def dbd(ctx):
 
-    ts = [146956554371989504, 441986625283686413, 539137498664665109, 578714642843435019]
+    ts = [441986625283686413, 539137498664665109, 578714642843435019]
 
     for t in ts:
         user = await bot.fetch_user(t)
@@ -217,7 +217,7 @@ async def dbd(ctx):
 
         await channel.send("Alguem usou este comando pois quer jogar dbd contigo")
 
-    await ctx.message.channel.send("Baiano Vruh 2 Fellow jitster e Lemon convidados para o dbd (Pallet loop)")
+    await ctx.message.channel.send("Baiano Fellow jitster e Lemon convidados para o dbd (Pallet loop)")
 
 @bot.command(pass_context = True)
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""):
@@ -233,10 +233,11 @@ async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: 
         if m.id not in participants:
             participants.append(m.id)
 
-    response = await ctx.send("Reaja para confirmar")
+    embed=discord.Embed(title="Roleta Russa", description=participants + "test", set_image = "https://cdn.discordapp.com/attachments/732780811920605247/868407430105661500/dc983c4d100ad1fc9efec48fad5127cd.png")
+    response = await ctx.send(embed=embed)
     await response.add_reaction("👍")
 
-    time.sleep(15)
+    time.sleep(10)
 
     print(participants)
 
