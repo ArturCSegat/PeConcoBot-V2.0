@@ -228,7 +228,14 @@ async def kickall(ctx):
         await ctx.send(ctx.message.author.mention + ", q falta de consideração sua")
     else:
         await ctx.send("Kk te fode")
- 
+
+@bot.command(pass_context = True)
+async def teresa(ctx):
+    await ctx.send("É com z")
+    time.sleep(10)
+    await ctx.send("Um burrinho falou seu nome errado @Leandrinho#0549")
+
+
 @bot.command(pass_context  = True)
 async def dbd(ctx):
 
@@ -332,9 +339,6 @@ async def vote_kick(ctx, user:discord.Member):
     print(user.name)
     print(ctx.message.author.name)
 
-@bot.command(pass_context = True)
-async def teresa(ctx):
-    await ctx.send("É com z")
 # a weird attempt on music commands
 
 @bot.command(pass_context = True)
