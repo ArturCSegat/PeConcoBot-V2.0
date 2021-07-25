@@ -13,12 +13,11 @@ intents = discord.Intents.all()
 intents.presences = True
 intents.messages = True
 
-
-bot = commands.Bot(command_prefix=command_prefix, intents=intents)   #test
-
-def command_test(bot, message):
+def command_prefix(bot, message):
     if commands.teresa:
         return ''
+bot = commands.Bot(command_prefix=command_prefix, intents=intents)   #test
+
 @bot.event
 async def on_ready():
     print("ready")
