@@ -16,6 +16,8 @@ intents.messages = True
 def command_prefix(bot, message):
     if commands.teresa:
         return ''
+    else:
+        return '!'
 bot = commands.Bot(command_prefix=command_prefix, intents=intents)   #test
 
 @bot.event
