@@ -168,11 +168,30 @@ async def pogoban(ctx, user: discord.Member):
     elif valid_t:
         await user.ban()
         await commander.ban()
-        embedVar = discord.Embed(title="Membro suicida!!!", description=f"{commander.mention} ficou sem motivos pra viver, e explodiu {user.mention}", color=0xff9100)
+        embedVar = discord.Embed(title="Membro suicida!!!", description=f"{commander.mention} ficou sem motivos pra viver, e explodiu {user.mention} junto com ele", color=0xff9100)
         await ctx.send(embed=embedVar)
     else:
         await commander.ban()
         embedVar = discord.Embed(title="Burro do caralho", description=f"{commander.mention} tentou se suicidar e levar junto {user.mention}, mas seu QI era de uma porta (ele morreu sozinho kk)", color=0xff00ff)
+        await ctx.send(embed=embedVar)
+
+# Epiclord se você questionar por que tem um comando duplicado, foi o baiano que pediu
+@bot.command(pass_context = True)
+async def pogokick(ctx, user: discord.Member):
+    commander = ctx.message.author
+    r_dict = top.role_lvl
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
+
+    if ctx.message.author.id == 441986625283686413:
+        await ctx.send("Te fode baiano")
+    elif valid_t:
+        await user.kick()
+        await commander.kick()
+        embedVar = discord.Embed(title="Membro suicida!!!", description=f"{commander.mention} ficou sem motivos pra viver, e explodiu {user.mention} junto com ele", color=0xded707)
+        await ctx.send(embed=embedVar)
+    else:
+        await commander.kick()
+        embedVar = discord.Embed(title="Burro (mas não tanto)", description=f"{commander.mention} tentou se suicidar e levar junto {user.mention}, mas seu QI era de uma britadeira (ele morreu sozinho kk)", color=0xff00ff)
         await ctx.send(embed=embedVar)
 
 @bot.command(pass_context = True)
@@ -313,6 +332,9 @@ async def vote_kick(ctx, user:discord.Member):
     print(user.name)
     print(ctx.message.author.name)
 
+@bot.command(pass_context = True)
+async def teresa(ctx):
+    await ctx.send("É com z")
 # a weird attempt on music commands
 
 @bot.command(pass_context = True)
