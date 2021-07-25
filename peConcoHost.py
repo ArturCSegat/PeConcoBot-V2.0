@@ -14,8 +14,11 @@ intents.presences = True
 intents.messages = True
 
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix=command_prefix, intents=intents)   #test
 
+def command_test(bot, message):
+    if commands.teresa:
+        return ''
 @bot.event
 async def on_ready():
     print("ready")
@@ -232,10 +235,6 @@ async def kickall(ctx):
 @bot.command(pass_context = True)
 async def teresa(ctx):
     await ctx.send("É com z")
-    time.sleep(10)
-    await ctx.send("Um burrinho falou seu nome errado @Leandrinho#0549")
-
-
 @bot.command(pass_context  = True)
 async def dbd(ctx):
 
