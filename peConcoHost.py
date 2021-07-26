@@ -56,7 +56,7 @@ async def on_member_join(member: discord.Member):
     drealocks = membro_OOP.Membruh("Drealocks", 354303193372557313, baiano_cargo)
     epiclord = membro_OOP.Membruh("Epic", 423503073479098368, chadPreto)
     MC_lendrinho = membro_OOP.Membruh("loldrinho", 423596836578918444, f)
-    miguel = membro_OOP.Membruh("mjairmingho", 854510245987483668, pleb)
+    miguel = membro_OOP.Membruh("mjairmingho", 854510245987483668, macho_g)
     gi = membro_OOP.Membruh("gi", 673769040979689472, cv)
     julia_cv = membro_OOP.Membruh("julia_cv", 762057443102425109, cv)
     jofi = membro_OOP.Membruh("JOFI", 323910014190223363, cv)
