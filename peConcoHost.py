@@ -62,10 +62,11 @@ async def on_member_join(member: discord.Member):
     jofi = membro_OOP.Membruh("JOFI", 323910014190223363, cv)
     isona = membro_OOP.Membruh("Isona", 368897414188236800, cv)
     franco = membro_OOP.Membruh("puflew", 440562108724281344, chadPreto)
+    limao = membro_OOP.Membruh("limao", 539137498664665109, s_tereza)
 
 
 
-    members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, MC_lendrinho, miguel, gi, julia_cv, jofi, isona, franco]
+    members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, MC_lendrinho, miguel, gi, julia_cv, jofi, isona, franco, limao]
 
     members_hash = {m.ident: m for m in members}
 # handles giving out the roles
