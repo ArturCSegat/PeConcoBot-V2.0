@@ -40,7 +40,7 @@ def bogoSort(nums): #vou deixar isso aqui pra algum dia hhihi -EpicLord
     newNums = []
     for num in nums:
         newNums.insert(random.randint(0,5), num)
-    print(newNums)
+    # print(newNums)
     
     if newNums == [1,2,3,4,5,6]:
         return "yay"
@@ -49,7 +49,7 @@ def bogoSort(nums): #vou deixar isso aqui pra algum dia hhihi -EpicLord
             newNums.clear()
             for num in nums:
                 newNums.insert(random.randint(0,5), num)
-            print(newNums)
+        #     print(newNums)
         
-        print(newNums)
+        # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
         return "found it"
