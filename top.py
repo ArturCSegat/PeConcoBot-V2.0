@@ -1,3 +1,5 @@
+import random
+
 top_r =  [] # reiquia de codigo antigo
 top_r_bans =  [] #reliquia de codigo antigo
 
@@ -32,3 +34,22 @@ def checkRole(id1, id2): # essa é a função leva dois ids de cargo, ela vai ol
         return valid # retorna valid como True
     else:
         return valid # retorna valid como False
+
+
+def bogoSort(nums): #vou deixar isso aqui pra algum dia hhihi -EpicLord
+    newNums = []
+    for num in nums:
+        newNums.insert(random.randint(0,5), num)
+    print(newNums)
+    
+    if newNums == [1,2,3,4,5,6]:
+        return "yay"
+    else:
+        while newNums != [1, 2, 3, 4, 5, 6]:
+            newNums.clear()
+            for num in nums:
+                newNums.insert(random.randint(0,5), num)
+            print(newNums)
+        
+        print(newNums)
+        return "found it"
