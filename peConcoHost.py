@@ -1,4 +1,3 @@
-
 import discord # importa a biblioteca discord pra usar classes e funções do discord
 from discord import client # n lembro mas tem a ver com a linha 1
 from discord import message # n  lembro mas tem a ver com a linha 1
@@ -8,6 +7,7 @@ import random # usado na função rr ou roleta russa para escolher o cara kickad
 import top # permite usar variaveis funções e classes do arquivo top.py (ver pata)
 import time # usado nas funções votekick e rr para usar funções relacionadas sobre tempo como time.sleep para espear x segundos
 import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
+
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
