@@ -11,7 +11,7 @@ import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
-intents.messages = True % # ver acima
+intents.messages = True # ver acima
 
 bot = commands.Bot(command_prefix="!", intents=intents)   # cria a variavel bot usando o modulo commands (ver linha 6)
 
