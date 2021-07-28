@@ -81,13 +81,13 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
 async def on_message(message): # isso é executado toda vez q uma msg é enviada em qualquer server q o bot esteja, no momento vazio
     # ctx = await bot.get_context(message) 
     await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
-    pass
     vaisefuder = "É com z"
     if message == "teresa":
         await ctx.send(vaisefuder)
         # será q essa porra funciona mesmo?
     elif message == "Teresa":
         await ctx.send(vaisefuder)
+    pass
 
 #only commands from here
 
@@ -257,7 +257,7 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
 
     commander = ctx.message.author
 
-    valid_t = top.checkRole(commander.top_role.id, user.id)
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
         nums = [1, 2, 3, 4, 5, 6] # essa função executa em bogo sort, no final do bogo sort ele kicka o cara -EpicLord 
@@ -265,6 +265,8 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
         for num in nums:
             newNums.insert(random.randint(0,5), num)
         await ctx.send(newNums)
+
+        await ctx.send(f"Sua morte é iminente, {user.mention}")
         
         if newNums == [1,2,3,4,5,6]:
             await user.kick()
