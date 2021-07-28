@@ -82,6 +82,12 @@ async def on_message(message): # isso é executado toda vez q uma msg é enviada
     # ctx = await bot.get_context(message) 
     await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
     pass
+    vaisefuder = "É com z"
+    if message == "teresa":
+        await ctx.send(vaisefuder)
+        # será q essa porra funciona mesmo?
+    elif message == "Teresa":
+        await ctx.send(vaisefuder)
 
 #only commands from here
 
@@ -292,7 +298,7 @@ async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: 
         if m.id not in participants:
             participants.append(m.id)
 
-    response = await ctx.send("Reaja para confirmar") # manda a classica mensagem
+    response = await ctx.send("Reaja para confirmar") # manda a classica mensagem       # Inembedavel, não manda a mensagem caso for um embed (???)
     await response.add_reaction("👍") # reage com a classica mensagem
 
     time.sleep(15) # n faz absolutamente nada por 15 segundos
