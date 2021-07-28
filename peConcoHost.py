@@ -82,7 +82,7 @@ async def on_message(message): # isso é executado toda vez q uma msg é enviada
     # ctx = await bot.get_context(message) 
     await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
     if "teresa" in message.content.lower:
-        message.channel.send("É com z")
+        await message.channel.send("É com z")
 
 #only commands from here
 
