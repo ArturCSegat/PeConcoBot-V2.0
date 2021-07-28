@@ -276,6 +276,7 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
                 newNums.clear()
                 for num in nums:
                     newNums.insert(random.randint(0,5), num)
+                    time.sleep(0.1)
                 counter = counter + 1
 
             # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
