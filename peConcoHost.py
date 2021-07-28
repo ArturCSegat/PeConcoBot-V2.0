@@ -82,10 +82,10 @@ async def on_message(message): # isso é executado toda vez q uma msg é enviada
     # ctx = await bot.get_context(message) 
     await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
     vaisefuder = "É com z"
-    if message == "teresa":
+    if message.content == "teresa":
         await ctx.send(vaisefuder)
         # será q essa porra funciona mesmo?
-    elif message == "Teresa":
+    elif message.content == "Teresa":
         await ctx.send(vaisefuder)
     pass
 
