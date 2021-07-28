@@ -246,6 +246,30 @@ async def dbd(ctx): #comando dbd
 
     await ctx.message.channel.send("Baiano Fellow jitster e Lemon convidados para o dbd (Pallet loop)") #avisa a pessoa q mandou !dbd que as msgs foram enviadas
 
+@bot.command()
+async def bogokick(ctx, user: discord.User): # cara se tu for o vruh2 imagino q tu entenda, se tu for o bruno boa sorte tentado entender
+    nums = [1, 2, 3, 4, 5, 6] # essa função executa em bogo sort, no final do bogo sort ele kicka o cara -EpicLord 
+    newNums = []
+    for num in nums:
+        newNums.insert(random.randint(0,5), num)
+    await ctx.send(newNums)
+    
+    if newNums == [1,2,3,4,5,6]:
+        await user.kick()
+        await ctx.send(f"{user.mention} foi kickado de primeira")
+        
+    else:
+        while newNums != [1, 2, 3, 4, 5, 6]:
+            newNums.clear()
+            for num in nums:
+                newNums.insert(random.randint(0,5), num)
+            await ctx.send(newNums)
+        
+        # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
+        await user.kick()
+        await ctx.send(f"O bot acertou o bogosort e kickou {user.mention}")
+
+
 @bot.command(pass_context = True) # cara essa função é purra putisse mas eu vou tentar
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""): #esses são os argumentos da função, o m1 e m2 são obrigatorios(a função n funciona sem eles) mas o resto é opcional e é definido para "" por default
     members_t = [m1, m2, m3, m4, m5, m6] # essa é a lista de todos os argumentos passados

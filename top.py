@@ -53,3 +53,12 @@ def bogoSort(nums): #vou deixar isso aqui pra algum dia hhihi -EpicLord
         
         # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
         return "found it"
+
+        # maluco essa função vai ficar aqui parada por um bom tempo pq ela simplesmente n serve pra oq eu quero,
+        # n vou apagar mas tmb n vou usar se alguem precisar de um sort use o sort padrão do python como no exemplo abaixo
+        # x = [2, 3, 1, 4]
+        # x.sort()
+        # print(x) 
+
+        # [1, 2, 3, 4]
+        # - EpicLord
