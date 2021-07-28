@@ -339,7 +339,7 @@ async def vote_kick(ctx, user:discord.Member): # o comando esquecido usado tipo 
     votes = await call.channel.fetch_message(call.id) # pega a msg que mandou antes
 
     for react in votes.reactions: # ve todas as reções ad msg
-        if react.emoji == "🟢" # se a reação for verde aumente um ponto p:
+        if react.emoji == "🟢": # se a reação for verde aumente um ponto p:
             p = react.count -1 
         elif react.emoji == "🔴": # se a reaçõ for vermlho aument um ponto em vermelho
             n = react.count -1
