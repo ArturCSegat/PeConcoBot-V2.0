@@ -81,14 +81,8 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
 async def on_message(message): # isso é executado toda vez q uma msg é enviada em qualquer server q o bot esteja, no momento vazio
     # ctx = await bot.get_context(message) 
     await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
-    vaisefuder = "É com z"
-    if message.content == "teresa":
-        await ctx.send(vaisefuder)
-        # será q essa porra funciona mesmo?
-    elif message.content == "Teresa":
-        await ctx.send(vaisefuder)
-    pass
-
+    if "teresa" in message.content:
+        await ctx.send("É com z")
 #only commands from here
 
 
