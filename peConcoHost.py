@@ -80,9 +80,11 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
 @bot.event
 async def on_message(message): # isso é executado toda vez q uma msg é enviada em qualquer server q o bot esteja, no momento vazio
     # ctx = await bot.get_context(message) 
+    content = message.content
+    r_content = content.lower()
+    if "teresa" in r_content:
+        await message.channel.send("É com z")
     await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
-    if "teresa" in message.content.lower:
-        await ctx.send("É com z")
 #only commands from here
 
 
@@ -254,6 +256,9 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
+
+        counter = 1
+
         nums = [1, 2, 3, 4, 5, 6] # essa função executa em bogo sort, no final do bogo sort ele kicka o cara -EpicLord 
         newNums = []
         for num in nums:
@@ -271,11 +276,11 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
                 newNums.clear()
                 for num in nums:
                     newNums.insert(random.randint(0,5), num)
-                await ctx.send(newNums)
-            
+                counter = counter + 1
+
             # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
             await user.kick()
-            await ctx.send(f"O bot acertou o bogosort e kickou {user.mention}")
+            await ctx.send(f"O bot acertou o bogosort e kickou {user.mention} em {counter} tentativas")
     else:
         ctx.send("Este usuario tem um cargo melhor q o seu")
 
