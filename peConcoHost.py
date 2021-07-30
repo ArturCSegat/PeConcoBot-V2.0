@@ -254,11 +254,14 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
     valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
 
     if valid_t:
+
+        counter = 1
+
         nums = [1, 2, 3, 4, 5, 6] # essa função executa em bogo sort, no final do bogo sort ele kicka o cara -EpicLord 
         newNums = []
         for num in nums:
             newNums.insert(random.randint(0,5), num)
-        await ctx.send(newNums)
+        seql = await ctx.send(newNums)
 
         await ctx.send(f"Sua morte é iminente, {user.mention}")
         
@@ -271,11 +274,13 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
                 newNums.clear()
                 for num in nums:
                     newNums.insert(random.randint(0,5), num)
-                await ctx.send(newNums)
-            
+                e_seql = await bot,fetch_message(seql)
+                await e_seql.edit(content=newNums)
+                counter = counter + 1
+
             # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
             await user.kick()
-            await ctx.send(f"O bot acertou o bogosort e kickou {user.mention}")
+            await ctx.send(f"O bot acertou o bogosort e kickou {user.mention} em {counter} tentativas")
     else:
         ctx.send("Este usuario tem um cargo melhor q o seu")
 
