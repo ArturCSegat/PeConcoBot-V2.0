@@ -56,7 +56,7 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
     pontos = membro_OOP.Membruh("...", 578714642843435019, macho_g)
     drealocks = membro_OOP.Membruh("Drealocks", 354303193372557313, baiano_cargo)
     epiclord = membro_OOP.Membruh("Epic", 423503073479098368, chadPreto)
-    MC_lendrinho = membro_OOP.Membruh("loldrinho", 423596836578918444, f)
+    mc_lendrinho = membro_OOP.Membruh("loldrinho", 423596836578918444, f)
     miguel = membro_OOP.Membruh("mjairmingho", 854510245987483668, macho_g)
     gi = membro_OOP.Membruh("gi", 673769040979689472, cv)
     julia_cv = membro_OOP.Membruh("julia_cv", 762057443102425109, cv)
@@ -67,7 +67,7 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
     japa = membro_OOP.Membruh("japa", 413152550242615306, chadPreto)
 
 
-    members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, MC_lendrinho, miguel, gi, julia_cv, jofi, isona, franco, limao, japa]
+    members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, mc_lendrinho, miguel, gi, julia_cv, jofi, isona, franco, limao, japa]
 
 #  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ essa lista é dos membros q tem autorole se for adicionar autorole para alguem adicione ele(ela)  na lista tmb se n n funciona
 
@@ -302,14 +302,25 @@ async def fox(ctx):
     await ctx.send((x["image"]))
 
 @bot.command()
-async def clima(ctx, city):
-    
-    try:
-        trueClima = weather.getClimet(city)
+async def clima(ctx, city, city2 = None):
+    if city2:
 
-        await ctx.send(trueClima)
-    except:
-        await ctx.send("Essa cidade n existe")
+        city = city +  "+" + city2
+    
+        try:
+            trueClima = weather.getClimet(city)
+
+            await ctx.send(trueClima)
+        except:
+            await ctx.send("Essa cidade n existe")
+    
+    else:
+        try:
+            trueClima = weather.getClimet(city)
+
+            await ctx.send(trueClima)
+        except:
+            await ctx.send("Essa cidade n existe")
 
 @bot.command(pass_context = True) # cara essa função é purra putisse mas eu vou tentar
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""): #esses são os argumentos da função, o m1 e m2 são obrigatorios(a função n funciona sem eles) mas o resto é opcional e é definido para "" por default

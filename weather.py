@@ -6,9 +6,10 @@ def stripSpace(word, char):
 
 	return word
 
-def getClimet(city):
+def getClimet(city, city2 = None):
 
-	city = stripSpace(city, "+")
+	if city2:
+		city = city + city2
 
 	response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=7e43286642d7564fd34746470da1219a")
 
