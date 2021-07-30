@@ -303,10 +303,13 @@ async def fox(ctx):
 
 @bot.command()
 async def clima(ctx, city):
+    
+    try:
+        trueClima = weather.getClimet(city)
 
-    trueClima = weather.getClimet(city)
-
-    await ctx.send(trueClima)
+        await ctx.send(trueClima)
+    except:
+        await ctx.send("Essa cidade n existe")
 
 @bot.command(pass_context = True) # cara essa função é purra putisse mas eu vou tentar
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""): #esses são os argumentos da função, o m1 e m2 são obrigatorios(a função n funciona sem eles) mas o resto é opcional e é definido para "" por default
