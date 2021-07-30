@@ -9,10 +9,7 @@ import time # usado nas funções votekick e rr para usar funções relacionadas
 import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
 import requests
 import random
-<<<<<<< HEAD
 import asyncio
-=======
->>>>>>> bcc3265aaf3ec3492374973ad8b18e3e09530c6b
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
