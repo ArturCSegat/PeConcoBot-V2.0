@@ -10,6 +10,7 @@ import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
 import requests
 import random
 import asyncio
+import clima
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
@@ -300,6 +301,13 @@ async def fox(ctx):
 
     await ctx.send((x["image"]))
 
+@bot.command()
+async def clima(city):
+
+    Clima = clima.getClimet(city)
+
+    await ctx.send(Clima)
+
 @bot.command(pass_context = True) # cara essa função é purra putisse mas eu vou tentar
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""): #esses são os argumentos da função, o m1 e m2 são obrigatorios(a função n funciona sem eles) mas o resto é opcional e é definido para "" por default
     members_t = [m1, m2, m3, m4, m5, m6] # essa é a lista de todos os argumentos passados
@@ -414,3 +422,4 @@ async def suicidio(ctx): #pergunta pro quaser foi ele que fez
 #      exit() # esse exit() simplesmente fecha o arquivo, funciona com qualquer arquivo de python
 
 bot.run("NzczOTMzNDUxMDM5NDczNjcy.X6QbsQ.rBCNpShd8tn8DVlhbdHgBAwEnIU") # isso faz o bot ficar online
+
