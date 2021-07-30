@@ -10,7 +10,7 @@ import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
 import requests
 import random
 import asyncio
-import clima
+import weather
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
@@ -304,9 +304,9 @@ async def fox(ctx):
 @bot.command()
 async def clima(city):
 
-    weather = clima.getClimet(city)
+    trueClima = clima.getClimet(city)
 
-    await ctx.send(weather)
+    await ctx.send(trueClima)
 
 @bot.command(pass_context = True) # cara essa função é purra putisse mas eu vou tentar
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""): #esses são os argumentos da função, o m1 e m2 são obrigatorios(a função n funciona sem eles) mas o resto é opcional e é definido para "" por default
