@@ -7,7 +7,8 @@ import random # usado na função rr ou roleta russa para escolher o cara kickad
 import top # permite usar variaveis funções e classes do arquivo top.py (ver pata)
 import time # usado nas funções votekick e rr para usar funções relacionadas sobre tempo como time.sleep para espear x segundos
 import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
-
+import requests
+import random
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
@@ -286,7 +287,16 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
             await ctx.send(f"O bot acertou o bogosort e kickou {user.mention} em {counter} tentativas")
     else:
         ctx.send("Este usuario tem um cargo melhor q o seu")
+        
+        
+@bot.command()
+async def fox(ctx):
 
+    respose = requests.get('https://randomfox.ca/floof/')
+
+    x = respose.json()
+
+    await ctx.send((x["image"]))
 
 @bot.command(pass_context = True) # cara essa função é purra putisse mas eu vou tentar
 async def rr(ctx, m1: discord.User, m2: discord.User, m3: discord.User = "",m4: discord.User = "", m5: discord.User = "", m6: discord.User = ""): #esses são os argumentos da função, o m1 e m2 são obrigatorios(a função n funciona sem eles) mas o resto é opcional e é definido para "" por default
