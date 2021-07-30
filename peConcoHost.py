@@ -80,9 +80,10 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
 @bot.event
 async def on_message(message): # isso é executado toda vez q uma msg é enviada em qualquer server q o bot esteja, no momento vazio
     # ctx = await bot.get_context(message) 
-    await bot.process_commands(message) # Essa linha é muito importante n apague ela quebra o bot
-    if "teresa" in message.content.lower:
+    # Essa linha é muito importante n apague ela quebra o bot
+    if "teresa" in message.content.lower():
         await ctx.send("É com z")
+    await bot.process_commands(message)
 #only commands from here
 
 
@@ -274,7 +275,7 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
                 newNums.clear()
                 for num in nums:
                     newNums.insert(random.randint(0,5), num)
-                e_seql = await bot,fetch_message(seql)
+                e_seql = await seql.channel.fetch_message(seql.id)
                 await e_seql.edit(content=newNums)
                 counter = counter + 1
 
