@@ -275,7 +275,8 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
                 newNums.clear()
                 for num in nums:
                     newNums.insert(random.randint(0,5), num)
-
+                
+                time.sleep(1)
                 e_seql = await seql.channel.fetch_message(seql.id)
                 await e_seql.edit(content=newNums)
                 counter = counter + 1
