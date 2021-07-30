@@ -302,7 +302,7 @@ async def fox(ctx):
     await ctx.send((x["image"]))
 
 @bot.command()
-async def clima(city):
+async def clima(ctx, city):
 
     trueClima = weather.getClimet(city)
 
