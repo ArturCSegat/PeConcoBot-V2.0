@@ -395,8 +395,8 @@ async def suicidio(ctx): #pergunta pro quaser foi ele que fez
 
 # mergency command
 
-@bot.command(pass_context = True)
-async def close(ctx): #comando !close
-     exit() # esse exit() simplesmente fecha o arquivo, funciona com qualquer arquivo de python
+# @bot.command(pass_context = True)
+# async def close(ctx): #comando !close
+#      exit() # esse exit() simplesmente fecha o arquivo, funciona com qualquer arquivo de python
 
 bot.run("NzczOTMzNDUxMDM5NDczNjcy.X6QbsQ.rBCNpShd8tn8DVlhbdHgBAwEnIU") # isso faz o bot ficar online
