@@ -9,7 +9,10 @@ import time # usado nas funções votekick e rr para usar funções relacionadas
 import membro_OOP # permite usar as classes de membro_OOP.py (ver pasta)
 import requests
 import random
+<<<<<<< HEAD
 import asyncio
+=======
+>>>>>>> bcc3265aaf3ec3492374973ad8b18e3e09530c6b
 
 intents = discord.Intents.all() # n lembro onde isso é usado mas é importante n remova
 intents.presences = True # ver acima
@@ -279,6 +282,7 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
                     newNums.insert(random.randint(0,5), num) # ver acima
                 
                 await asyncio.sleep(1) # dorme por um segundo
+
                 e_seql = await seql.channel.fetch_message(seql.id) # pega a msg dizendo a priemria tentativa de novo
                 await e_seql.edit(content=newNums) #edita ela com a tentativa atual
                 counter = counter + 1 # aumenta o counter
@@ -359,8 +363,9 @@ async def vote_kick(ctx, user:discord.Member): # o comando esquecido usado tipo 
     await call.add_reaction("🟢")
     await call.add_reaction("🔴") # poe as duas reações na msg
 
-    await asyncio.sleep(20) # morre por 20 sgundos
 
+    await asyncio.sleep(20) # morre por 20 sgundos
+    
     p = 0 # votos positivos
     n = 0  # votos nigga ativos
     total_v = 0 # votos totais
