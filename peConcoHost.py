@@ -250,39 +250,39 @@ async def dbd(ctx): #comando dbd
 @bot.command()
 async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino q tu entenda, se tu for o bruno boa sorte tentado entender
 
-    commander = ctx.message.author
+    commander = ctx.message.author # define o autor da msg, vai ser usado pra definir valid_t
 
-    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id) # verfica seo  autor da msgtem cargo suficiente
 
-    if valid_t:
+    if valid_t: # se o autor tiver cargo suficiente
 
-        counter = 1
+        counter = 1 # cria um contador para as tentativas
 
-        nums = [1, 2, 3, 4, 5, 6] # essa função executa em bogo sort, no final do bogo sort ele kicka o cara -EpicLord 
-        newNums = []
-        for num in nums:
-            newNums.insert(random.randint(0,5), num)
-        seql = await ctx.send(newNums)
+        nums = [1, 2, 3, 4, 5, 6] # cria a primeira lista com ela ja em ordem por default
+        newNums = [] # cria a lista vazia onde vamos tentar colocar a primeira lista em orddem (lista para tentar)
+        for num in nums: # loopa por todods os numeros da lista default
+            newNums.insert(random.randint(0,5), num) # coloca o numero em um index aleatorio da lista de tentativa
+        seql = await ctx.send(newNums) # manda a msg dizendo a primeira tentativa
 
-        await ctx.send(f"Sua morte é iminente, {user.mention}")
+        await ctx.send(f"Sua morte é iminente, {user.mention}") # msg classica
         
-        if newNums == [1,2,3,4,5,6]:
+        if newNums == [1,2,3,4,5,6]: # verifica se a primeira tentativa foi um sucesso 
             await user.kick()
             await ctx.send(f"{user.mention} foi kickado de primeira")
             
-        else:
+        else: # se ela n for
             while newNums != [1, 2, 3, 4, 5, 6]:
-                newNums.clear()
-                for num in nums:
-                    newNums.insert(random.randint(0,5), num)
+                newNums.clear() # limpa a lista tentada
+                for num in nums: # deixa a lista aleatoria de novo
+                    newNums.insert(random.randint(0,5), num) # ver acima
                 
-                time.sleep(1)
-                e_seql = await seql.channel.fetch_message(seql.id)
-                await e_seql.edit(content=newNums)
-                counter = counter + 1
+                time.sleep(1) # dorme por um segundo
+                e_seql = await seql.channel.fetch_message(seql.id) # pega a msg dizendo a priemria tentativa de novo
+                await e_seql.edit(content=newNums) #edita ela com a tentativa atual
+                counter = counter + 1 # aumenta o counter
 
             # print(newNums) Esses prints estão comentados por servir ~funcções de debug e spamar d+ nos logs -EpicLord
-            await user.kick()
+            await user.kick() 
             await ctx.send(f"O bot acertou o bogosort e kickou {user.mention} em {counter} tentativas")
     else:
         ctx.send("Este usuario tem um cargo melhor q o seu")
