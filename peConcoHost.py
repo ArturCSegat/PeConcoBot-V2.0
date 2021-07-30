@@ -304,7 +304,7 @@ async def fox(ctx):
 @bot.command()
 async def clima(city):
 
-    trueClima = clima.getClimet(city)
+    trueClima = weather.getClimet(city)
 
     await ctx.send(trueClima)
 
