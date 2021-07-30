@@ -1,4 +1,9 @@
 import random
+import discord
+from discord.ext import commands
+
+
+bot = commands.Bot(command_prefix="!")
 
 top_r =  [] # reiquia de codigo antigo
 top_r_bans =  [] #reliquia de codigo antigo
@@ -34,7 +39,6 @@ def checkRole(id1, id2): # essa é a função leva dois ids de cargo, ela vai ol
         return valid # retorna valid como True
     else:
         return valid # retorna valid como False
-
 
 def bogoSort(nums): #vou deixar isso aqui pra algum dia hhihi -EpicLord
     newNums = []
