@@ -14,8 +14,15 @@ def getClimet(city):
 
 	j_response = response.json()
 
+	coord = j_response["coord"]
+
 	weather = j_response["weather"]
 
 	mainWeather = weather[0]
 
-	return mainWeather["main"]
+	returnes = [mainWeather["main"], coord]
+
+	return returnes[0], returnes[1]
+
+
+print(getClimet("Mano"))
