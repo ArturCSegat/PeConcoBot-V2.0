@@ -49,7 +49,7 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
 # members, cada um desses objetos são os membros do server q tem autotole, a primeira palavra e so identificação normal e n serve pra nada, o segundo é o id deles no discord e a terceira é o cargo deles para o autorole, ver seção de cargos acima
     vruh2 = membro_OOP.Membruh("kfh", 146956554371989504, c_master)
     omni = membro_OOP.Membruh("omni", 225051659221467137, chadPreto)
-    chad = membro_OOP.Membruh("faxina", 584776317321609238, chadCargo)
+    chad = membro_OOP.Membruh("faxina", 584776317321609238, chadPreto)
     ernestoChe = membro_OOP.Membruh("ernesto", 691069156400824372, indio)
     baiano = membro_OOP.Membruh("breno", 441986625283686413, baiano_cargo)
     tocomdor = membro_OOP.Membruh("dudz", 358985083329314816, redk)
