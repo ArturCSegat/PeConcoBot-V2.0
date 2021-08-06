@@ -86,6 +86,8 @@ async def on_message(message): # isso é executado toda vez q uma msg é enviada
     # Essa linha é muito importante n apague ela quebra o bot
     if "teresa" in message.content.lower():
         await message.channel.send("É com z")
+    if "É com z" in  message.content.lower and message.channel.id == "869758343873441822"():
+        await message.channel.send("É com z")
     await bot.process_commands(message)
 #only commands from here
 
