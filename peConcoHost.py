@@ -267,7 +267,7 @@ async def bogokick(ctx, user: discord.Member): # cara se tu for o vruh2 imagino 
             newNums.insert(random.randint(0,5), num) # coloca o numero em um index aleatorio da lista de tentativa
         seql = await ctx.send(newNums) # manda a msg dizendo a primeira tentativa
 
-        await ctx.send(f"Sua morte é iminente, {user.mention}") # msg classica
+        await ctx.send(f"Sua morte é eminem te, {user.mention}") # msg classica
         
         if newNums == [1,2,3,4,5,6]: # verifica se a primeira tentativa foi um sucesso 
             await user.kick()
