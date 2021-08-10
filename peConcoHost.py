@@ -226,15 +226,22 @@ async def unban(ctx, user: discord.User): # esse funciona de um jeito um pouco d
     await invite_channel.send("Vc foi desbanido, https://discord.gg/epk8bFT") # aqui manda o invite
 
 @bot.command(pass_context = True)
-async def timedkick(ctx, user: discord.Member, delay:float):
-    valid_t = top.checkRole(ctx.message.author.top_role.id, user.top_role.id)
-    if delay <= '604800' and valid_t:
-        await ctx.send(f"Esperando {delay} segundos pra kickar {user.mention}")
-        time.sleep(delay)
-        await user.kick
-        await ctx.send(f"{user.mention} foi kickado após {delay} segundos")
-    else:
-        await ctx.send("te fode")
+async def timedkick(ctx, user: discord.Member, delay:float):                        #   Argumentos da função: ctx (contexto da mensagem, onde ela foi mandada), user (quem vai ser kickado), delay:float (o delay pro kick) (float significa q pode ser um número com virgula)
+    valid_t = top.checkRole(ctx.message.author.top_role.id, user.top_role.id)       #   Checa o role do autor da mensagem e o usuário sendo kickado
+    uid = user.id                                                                   #   Pega o id do cara kickado pra depois mandar um invite pra ele
+    u = await bot.fetch_user(uid)                                                   #   Acha o cara com o id achado acima, essa é a variavel que tu vai usar caso tu tente fazer algo com alguém que não tá no server
+    if delay <= 604800 and valid_t:                                                 #   Se o delay dado for menor que ou igual a 604800 segundos (7 dias) e o cargo for válido (veja a primeira linha da função), então faça o seguinte:
+        await ctx.send(f"Esperando {delay} segundos pra kickar {user.mention}")         #   Manda a mensagem com o delay dado ({delay}) e a menção do usuário kickado ({user.mention})
+        await asyncio.sleep(delay)                                                      #   Basicamente time.sleep mas um pouco mais multi-threaded (pode rodar junto com outros comandos); Espera até o delay dado for atingido pra seguir
+        await user.kick()                                                               #   Finalmente kicka o usuário
+        await ctx.send(f"{user.mention} foi kickado após {delay} segundos")             #   Manda a mensagem final (Ex: @Fellow_Jitster ({user.mention}) foi kickado após 15.0 ({delay}) segundos
+        invite_channel = await u.create_dm()                                            #   Cria um privado com o usuário kickado
+        await invite_channel.send("Vc foi desbanido, https://discord.gg/epk8bFT")       #   Manda um invite pra ele
+    else:                                                                           #   Se o delay for algo inválido ou alto demais, e/ou o cargo do autor da mensagem for muito baixo:
+        await ctx.send("te fode")                                                       #   Manda o autor se fuder
+
+#   Sacou baiano? Te dei na colher essa porra
+
 # theese are funny (Super funny) commands
 @bot.command() # P
 async def kickall(ctx):# U
@@ -445,5 +452,5 @@ async def suicidio(ctx): #pergunta pro quaser foi ele que fez
 # async def close(ctx): #comando !close
 #      exit() # esse exit() simplesmente fecha o arquivo, funciona com qualquer arquivo de python
 
-bot.run("NzczOTMzNDUxMDM5NDczNjcy.X6QbsQ.rBCNpShd8tn8DVlhbdHgBAwEnIU") # isso faz o bot ficar online
+bot.run("ODY4NDE4MTkzNDUzMTEzMzY1.YPvXdw.1RCOW6M-oQ6ajjWPRey32RpeMw4") # isso faz o bot ficar online
 
