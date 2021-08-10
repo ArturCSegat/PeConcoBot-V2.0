@@ -227,7 +227,7 @@ async def unban(ctx, user: discord.User): # esse funciona de um jeito um pouco d
 
 @bot.command(pass_context = True)
 async def timedkick(ctx, user: discord.Member, delay:float):
-    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
+    valid_t = top.checkRole(ctx.message.author.top_role.id, user.top_role.id)
     if delay <= '604800' and valid_t:
         await ctx.send(f"Esperando {delay} segundos pra kickar {user.mention}")
         time.sleep(delay)
