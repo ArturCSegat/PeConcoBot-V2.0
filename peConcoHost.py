@@ -225,6 +225,16 @@ async def unban(ctx, user: discord.User): # esse funciona de um jeito um pouco d
     invite_channel = await u.create_dm() #aqui cria a dm com ele 
     await invite_channel.send("Vc foi desbanido, https://discord.gg/epk8bFT") # aqui manda o invite
 
+@bot.command(pass_context = True)
+async def timedkick(ctx, user: discord.Member, delay:float):
+    valid_t = top.checkRole(commander.top_role.id, user.top_role.id)
+    if delay <= '604800' and valid_t:
+        await ctx.send(f"Esperando {delay} segundos pra kickar {user.mention}")
+        time.sleep(delay)
+        await user.kick
+        await ctx.send(f"{user.mention} foi kickado após {delay} segundos")
+    else:
+        await ctx.send("te fode")
 # theese are funny (Super funny) commands
 @bot.command() # P
 async def kickall(ctx):# U
