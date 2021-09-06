@@ -452,5 +452,5 @@ async def suicidio(ctx): #pergunta pro quaser foi ele que fez
 # async def close(ctx): #comando !close
 #      exit() # esse exit() simplesmente fecha o arquivo, funciona com qualquer arquivo de python
 
-bot.run("NzczOTMzNDUxMDM5NDczNjcy.X6QbsQ.kEk5d4c9LerHZ_LfMvRyF7CCb44") # isso faz o bot ficar online
+bot.run("") # isso faz o bot ficar online
 
