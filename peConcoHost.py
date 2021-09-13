@@ -445,6 +445,16 @@ async def suicidio(ctx): #pergunta pro quaser foi ele que fez
     await ctx.send(embed=embedVar)
     invite_channel = await u.create_dm()
     await invite_channel.send("Emo da porra, https://discord.gg/epk8bFT")
+    
+@bot.command(pass_context = True)   # Comando cry tava no notebook -kfh83
+async def cry(ctx, user:discord.Member = None):
+    commander = ctx.message.author  # Define o autor da mensagem como "commander" pra ficar um pouco mais facil de se referir depois
+    if user: # Se tiver uma menção (se o argumento user for definido):
+        embedVar= discord.Embed(title="Gonna cry?", description=f"{commander.mention} fez {user.mention} chorar 😭", color=0x03a5fc) # Define o embed
+        await ctx.send(embed=embedVar)  # Manda o embed como mensagem
+    else:    # Se não tiver uma menção (!cry  vazio)
+        embedVar= discord.Embed(title="Cryou", description=f"{commander.mention} esta chorando 😭", color=0x03a5fc)  # Define o embed
+        await ctx.send(embed=embedVar)  # Manda o embed como mensagem
 
 # mergency command
 
