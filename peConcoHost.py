@@ -29,42 +29,42 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
 
 
 # roles, todos esses sçao os cargos do servidor com seus respectivos ids, no futuro mudar todos como variaveis globais como é o caso do cargo cv q ja foi atualizado
-    pleb = guild.get_role(818486529314783263)
-    c_master = guild.get_role(832611250348228628)
-    chadCargo = guild.get_role(818487902606327878)
+    pl = guild.get_role(818486529314783263)
+    cm = guild.get_role(832611250348228628)
+    chad = guild.get_role(818487902606327878)
     baiano_cargo = guild.get_role(849469082566262839) 
     botRole = guild.get_role(818487365956796456)
     atlantida = guild.get_role(819565407282266112)
-    macho_g = guild.get_role(847287306858528828)
-    s_tereza = guild.get_role(859066768601645066)
-    f_tereza = guild.get_role(856282555703492638)
-    chadPreto = guild.get_role(856056567491985419)
-    indio = guild.get_role(862672037835178004)
+    mg = guild.get_role(847287306858528828)
+    st = guild.get_role(859066768601645066)
+    st = guild.get_role(856282555703492638)
+    cp = guild.get_role(856056567491985419)
+    ind = guild.get_role(862672037835178004)
     redk = guild.get_role(860139656796700682)
-    pimonte = guild.get_role(862067103061377034)
+    pm = guild.get_role(862067103061377034)
     f = guild.get_role(862333483732566066)
     cv = guild.get_role(top.CV) # esse cargo é diferente pq ele usa uma variavel importada do modulo top.py(ver linha 8) tecnicamente todos eles podiam ser assim mas eu tenho preguissa
     
 
 # members, cada um desses objetos são os membros do server q tem autotole, a primeira palavra e so identificação normal e n serve pra nada, o segundo é o id deles no discord e a terceira é o cargo deles para o autorole, ver seção de cargos acima
-    vruh2 = membro_OOP.Membruh("kfh", 146956554371989504, c_master)
-    omni = membro_OOP.Membruh("omni", 225051659221467137, chadPreto)
-    chad = membro_OOP.Membruh("faxina", 584776317321609238, chadPreto)
-    ernestoChe = membro_OOP.Membruh("ernesto", 691069156400824372, indio)
+    vruh2 = membro_OOP.Membruh("kfh", 146956554371989504, cm)
+    omni = membro_OOP.Membruh("omni", 225051659221467137, cp)
+    chad = membro_OOP.Membruh("faxina", 584776317321609238, cp)
+    ernestoChe = membro_OOP.Membruh("ernesto", 691069156400824372, ind)
     baiano = membro_OOP.Membruh("breno", 441986625283686413, baiano_cargo)
     tocomdor = membro_OOP.Membruh("dudz", 358985083329314816, redk)
-    pontos = membro_OOP.Membruh("...", 578714642843435019, macho_g)
+    pontos = membro_OOP.Membruh("...", 578714642843435019, mg)
     drealocks = membro_OOP.Membruh("Drealocks", 354303193372557313, baiano_cargo)
-    epiclord = membro_OOP.Membruh("Epic", 423503073479098368, chadPreto)
+    epiclord = membro_OOP.Membruh("Epic", 423503073479098368, cp)
     mc_lendrinho = membro_OOP.Membruh("loldrinho", 423596836578918444, f)
-    miguel = membro_OOP.Membruh("mjairmingho", 854510245987483668, macho_g)
+    miguel = membro_OOP.Membruh("mjairmingho", 854510245987483668, mg)
     gi = membro_OOP.Membruh("gi", 673769040979689472, cv)
     julia_cv = membro_OOP.Membruh("julia_cv", 762057443102425109, cv)
     jofi = membro_OOP.Membruh("JOFI", 323910014190223363, cv)
     isona = membro_OOP.Membruh("Isona", 368897414188236800, cv)
-    franco = membro_OOP.Membruh("puflew", 440562108724281344, chadPreto)
-    limao = membro_OOP.Membruh("limao", 539137498664665109, s_tereza)
-    japa = membro_OOP.Membruh("japa", 413152550242615306, chadPreto)
+    franco = membro_OOP.Membruh("puflew", 440562108724281344, cp)
+    limao = membro_OOP.Membruh("limao", 539137498664665109, st)
+    japa = membro_OOP.Membruh("japa", 413152550242615306, cp)
 
 
     members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, mc_lendrinho, miguel, gi, julia_cv, jofi, isona, franco, limao, japa]
@@ -403,7 +403,7 @@ async def vote_kick(ctx, user:discord.Member): # o comando esquecido usado tipo 
     await asyncio.sleep(20) # morre por 20 sgundos
     
     p = 0 # votos positivos
-    n = 0  # votos nigga ativos
+    n = 0  # votos negativos
     total_v = 0 # votos totais
 
     votes = await call.channel.fetch_message(call.id) # pega a msg que mandou antes
