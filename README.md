@@ -3,9 +3,5 @@ Discord bot for the "Pé Conco Server" Discord server
 Made by EpicLord#7418, minor contributions by Vruh 2#0961
 # TODO
 
-FUll db rewrite
-
-
-More funny commands
-
-#Planos pra funny commands?
+- Full db rewrite to fix autorole redunduncy
+- nothing here, repo is just legacy code
