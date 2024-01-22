@@ -403,7 +403,7 @@ async def vote_kick(ctx, user:discord.Member): # o comando esquecido usado tipo 
     await asyncio.sleep(20) # morre por 20 sgundos
     
     p = 0 # votos positivos
-    n = 0  # votos negativos
+    n = 0  # votos niggativos
     total_v = 0 # votos totais
 
     votes = await call.channel.fetch_message(call.id) # pega a msg que mandou antes
