@@ -65,7 +65,7 @@ async def on_member_join(member: discord.Member): #função chamada toda vez q a
     franco = membro_OOP.Membruh("puflew", 440562108724281344, cp)
     limao = membro_OOP.Membruh("limao", 539137498664665109, st)
     japa = membro_OOP.Membruh("japa", 413152550242615306, cp)
-
+    # vai se fuder japa da mafia n entra 
 
     members = [vruh2, omni, chad, ernestoChe, baiano, tocomdor, pontos, drealocks, epiclord, mc_lendrinho, miguel, gi, julia_cv, jofi, isona, franco, limao, japa]
 
