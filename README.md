@@ -1,11 +1,8 @@
-# Optimized Map Rotation for Counter Strike Source Servers
+# PeConcoBot-V2.0
+Discord bot for the "Pé Conco Server" Discord server
+Made by art24#7418, minor contributions by Vruh 2#0961
+# TODO
 
-## DESCRIPTION
-An attempt at optimizing disk space usage on Counter-Strike: Source servers by downloading the map files off a cloud service mid-match and keeping only 1 or 2 map files locally on the server machine, so to not keep a huge pool of maps downloaded at all times. Once the next map file has been downloaded, waits until a specified amount of time runs out and restarts the server, deleting the previous match's map.
+- Full db rewrite to fix autorole redunduncy
+- nothing here, repo is just obsolete code this version is no longer the hosted one
 
-Also planned discord integration so players can change/request maps mid match.
-
-## TODO
-
-* refactoring of server runner
-* discord integration
